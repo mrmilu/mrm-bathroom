@@ -1,0 +1,314 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		5EE7445B1DEAFBD90083C4CE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EE7445A1DEAFBD90083C4CE /* AppDelegate.swift */; };
+		5EE7445D1DEAFBD90083C4CE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5EE7445C1DEAFBD90083C4CE /* Assets.xcassets */; };
+		5EE744601DEAFBD90083C4CE /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5EE7445E1DEAFBD90083C4CE /* MainMenu.xib */; };
+		5EE7446A1DEAFC190083C4CE /* PALoginItemUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EE744691DEAFC190083C4CE /* PALoginItemUtility.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		5EE744571DEAFBD90083C4CE /* Mr Milú Bathroom.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Mr Milú Bathroom.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		5EE7445A1DEAFBD90083C4CE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		5EE7445C1DEAFBD90083C4CE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		5EE7445F1DEAFBD90083C4CE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		5EE744611DEAFBD90083C4CE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5EE744671DEAFC190083C4CE /* Mr Milú Bathroom-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "Mr Milú Bathroom-Bridging-Header.h"; path = "Third Party/Mr Milú Bathroom-Bridging-Header.h"; sourceTree = "<group>"; };
+		5EE744681DEAFC190083C4CE /* PALoginItemUtility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PALoginItemUtility.h; path = "Third Party/PALoginItemUtility.h"; sourceTree = "<group>"; };
+		5EE744691DEAFC190083C4CE /* PALoginItemUtility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PALoginItemUtility.m; path = "Third Party/PALoginItemUtility.m"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		5EE744541DEAFBD90083C4CE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		5EE7444E1DEAFBD90083C4CE = {
+			isa = PBXGroup;
+			children = (
+				5EE744591DEAFBD90083C4CE /* Mr Milú Bathroom */,
+				5EE744581DEAFBD90083C4CE /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		5EE744581DEAFBD90083C4CE /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				5EE744571DEAFBD90083C4CE /* Mr Milú Bathroom.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		5EE744591DEAFBD90083C4CE /* Mr Milú Bathroom */ = {
+			isa = PBXGroup;
+			children = (
+				5EE7445A1DEAFBD90083C4CE /* AppDelegate.swift */,
+				5EE7445C1DEAFBD90083C4CE /* Assets.xcassets */,
+				5EE7445E1DEAFBD90083C4CE /* MainMenu.xib */,
+				5EE744611DEAFBD90083C4CE /* Info.plist */,
+				5EE7446B1DEB09990083C4CE /* Third Party */,
+			);
+			path = "Mr Milú Bathroom";
+			sourceTree = "<group>";
+		};
+		5EE7446B1DEB09990083C4CE /* Third Party */ = {
+			isa = PBXGroup;
+			children = (
+				5EE744681DEAFC190083C4CE /* PALoginItemUtility.h */,
+				5EE744691DEAFC190083C4CE /* PALoginItemUtility.m */,
+				5EE744671DEAFC190083C4CE /* Mr Milú Bathroom-Bridging-Header.h */,
+			);
+			name = "Third Party";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		5EE744561DEAFBD90083C4CE /* Mr Milú Bathroom */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5EE744641DEAFBD90083C4CE /* Build configuration list for PBXNativeTarget "Mr Milú Bathroom" */;
+			buildPhases = (
+				5EE744531DEAFBD90083C4CE /* Sources */,
+				5EE744541DEAFBD90083C4CE /* Frameworks */,
+				5EE744551DEAFBD90083C4CE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Mr Milú Bathroom";
+			productName = "Mr Milú Bathroom";
+			productReference = 5EE744571DEAFBD90083C4CE /* Mr Milú Bathroom.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		5EE7444F1DEAFBD90083C4CE /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0810;
+				LastUpgradeCheck = 0810;
+				ORGANIZATIONNAME = "Daniel Seijo Sánchez";
+				TargetAttributes = {
+					5EE744561DEAFBD90083C4CE = {
+						CreatedOnToolsVersion = 8.1;
+						DevelopmentTeam = 3DKTSA35Z6;
+						LastSwiftMigration = 0810;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 5EE744521DEAFBD90083C4CE /* Build configuration list for PBXProject "Mr Milú Bathroom" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 5EE7444E1DEAFBD90083C4CE;
+			productRefGroup = 5EE744581DEAFBD90083C4CE /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				5EE744561DEAFBD90083C4CE /* Mr Milú Bathroom */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		5EE744551DEAFBD90083C4CE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5EE7445D1DEAFBD90083C4CE /* Assets.xcassets in Resources */,
+				5EE744601DEAFBD90083C4CE /* MainMenu.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		5EE744531DEAFBD90083C4CE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5EE7446A1DEAFC190083C4CE /* PALoginItemUtility.m in Sources */,
+				5EE7445B1DEAFBD90083C4CE /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		5EE7445E1DEAFBD90083C4CE /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5EE7445F1DEAFBD90083C4CE /* Base */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		5EE744621DEAFBD90083C4CE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		5EE744631DEAFBD90083C4CE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+			};
+			name = Release;
+		};
+		5EE744651DEAFBD90083C4CE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 3DKTSA35Z6;
+				INFOPLIST_FILE = "Mr Milú Bathroom/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.daniseijo.MrMiluBathroom;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Mr Milú Bathroom/Third Party/Mr Milú Bathroom-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		5EE744661DEAFBD90083C4CE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 3DKTSA35Z6;
+				INFOPLIST_FILE = "Mr Milú Bathroom/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.daniseijo.MrMiluBathroom;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Mr Milú Bathroom/Third Party/Mr Milú Bathroom-Bridging-Header.h";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		5EE744521DEAFBD90083C4CE /* Build configuration list for PBXProject "Mr Milú Bathroom" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5EE744621DEAFBD90083C4CE /* Debug */,
+				5EE744631DEAFBD90083C4CE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5EE744641DEAFBD90083C4CE /* Build configuration list for PBXNativeTarget "Mr Milú Bathroom" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5EE744651DEAFBD90083C4CE /* Debug */,
+				5EE744661DEAFBD90083C4CE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 5EE7444F1DEAFBD90083C4CE /* Project object */;
+}
