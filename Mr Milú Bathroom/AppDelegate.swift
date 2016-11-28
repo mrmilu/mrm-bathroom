@@ -32,7 +32,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         }
         
         // Status Bar Item menu
-        statusBarItem = NSStatusBar.system().statusItem(withLength: NSVariableStatusItemLength)
+        statusBarItem = NSStatusBar.system().statusItem(withLength: NSSquareStatusItemLength)
         self.statusBarItem?.image = #imageLiteral(resourceName: "empty")
         
         let menu = NSMenu()
