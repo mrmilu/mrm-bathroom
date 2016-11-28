@@ -15,7 +15,9 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     
     var statusBarItem: NSStatusItem?
     
-    var occupied: Bool?
+    var receiveNoti: Bool = true
+    
+    var occupied: Bool = false
     
     let URL = "http://192.168.1.123:5001/api/bathroom_updates/1"
     // In case we want some API security
@@ -30,14 +32,41 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         }
         
         // Status Bar Item menu
-        statusBarItem = NSStatusBar.system().statusItem(withLength: NSSquareStatusItemLength)
+        statusBarItem = NSStatusBar.system().statusItem(withLength: NSVariableStatusItemLength)
+        self.statusBarItem?.image = #imageLiteral(resourceName: "empty")
         
         let menu = NSMenu()
+        
+        let notifItem = NSMenuItem(title: "Receive notifications", action: #selector(checkNotifications), keyEquivalent: "n")
+        
+        let receiveInt = UserDefaults.standard.integer(forKey: "receiveNoti")
+        
+        receiveNoti = (receiveInt == 0 || receiveInt == 2)
+        
+        if (receiveNoti) {
+            notifItem.state = NSOnState
+        } else {
+            notifItem.state = NSOffState
+        }
+        
+        menu.addItem(notifItem)
+        menu.addItem(NSMenuItem.separator())
         menu.addItem(NSMenuItem(title: "Quit Bathroom", action: #selector(quit), keyEquivalent: "q"))
         self.statusBarItem?.menu = menu
         
         // Begin loop
         self.isOccupied()
+    }
+    
+    func checkNotifications (sender: NSMenuItem) {
+        receiveNoti = !receiveNoti
+        if (receiveNoti) {
+            sender.state = NSOnState
+        } else {
+            sender.state = NSOffState
+        }
+        
+        UserDefaults.standard.set(receiveNoti ? 2 : 1, forKey: "receiveNoti")
     }
     
     // Quit app func
@@ -53,11 +82,16 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     
     // Setter with final loop
     func setOccupied (occupied: Bool) {
-        self.occupied = occupied
-        if (self.occupied)! {
-            self.statusBarItem?.image = #imageLiteral(resourceName: "locked")
-        } else {
-            self.statusBarItem?.image = #imageLiteral(resourceName: "unlocked")
+        if (self.occupied != occupied) {
+            self.occupied = occupied
+            if (self.occupied) {
+                self.statusBarItem?.image = #imageLiteral(resourceName: "busy")
+            } else {
+                self.statusBarItem?.image = #imageLiteral(resourceName: "empty")
+            }
+            if (self.receiveNoti) {
+                showNotification(self.occupied)
+            }
         }
         
         // Delay 2 seconds
@@ -70,25 +104,42 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     func isOccupied () {
         fetchOccupied { (data, response, error) in
             if error != nil {
+                self.setOccupied(occupied: false)
                 return
             }
             
             do {
                 let jsonObject = try(JSONSerialization.jsonObject(with: data!, options: .mutableContainers))
                 
-                let json = jsonObject as! NSDictionary
+                let json = jsonObject as? NSDictionary
                 
-                let occupied = json["occupied"] as! Bool
+                var occupied = false
+                occupied = json?["occupied"] as? Bool ?? false
                 
                 DispatchQueue.main.async(execute: {
                     self.setOccupied(occupied: occupied)
+                    return
                 })
                 
             } catch let err {
                 print(err)
+                self.setOccupied(occupied: false)
             }
         }
         
+    }
+    
+    func showNotification (_ occupied: Bool) {
+        let notification = NSUserNotification()
+        notification.title = "Mr. Milú Bathroom"
+        if (occupied) {
+            notification.informativeText = "The bathroom is occupied."
+        } else {
+            notification.informativeText = "The bathroom is free again."
+        }
+        //notification.soundName = NSUserNotificationDefaultSoundName
+        
+        NSUserNotificationCenter.default.deliver(notification)
     }
     
     // GET from url
