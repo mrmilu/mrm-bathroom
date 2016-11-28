@@ -264,6 +264,7 @@
 				DEVELOPMENT_TEAM = 3DKTSA35Z6;
 				INFOPLIST_FILE = "Mr Milú Bathroom/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				PRODUCT_BUNDLE_IDENTIFIER = com.daniseijo.MrMiluBathroom;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "Mr Milú Bathroom/Third Party/Mr Milú Bathroom-Bridging-Header.h";
@@ -281,6 +282,7 @@
 				DEVELOPMENT_TEAM = 3DKTSA35Z6;
 				INFOPLIST_FILE = "Mr Milú Bathroom/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				PRODUCT_BUNDLE_IDENTIFIER = com.daniseijo.MrMiluBathroom;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "Mr Milú Bathroom/Third Party/Mr Milú Bathroom-Bridging-Header.h";
@@ -307,6 +309,7 @@
 				5EE744661DEAFBD90083C4CE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

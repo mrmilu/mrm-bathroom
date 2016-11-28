@@ -30,5 +30,15 @@
 	<string>NSApplication</string>
 	<key>LSUIElement</key>
 	<true/>
+	<key>NSAppTransportSecurity</key>
+	<dict>
+		<key>NSAllowsArbitraryLoads</key>
+		<true/>
+		<key>NSExceptionDomains</key>
+		<dict>
+			<key>http://192.168.1.123:5001/</key>
+			<string></string>
+		</dict>
+	</dict>
 </dict>
 </plist>

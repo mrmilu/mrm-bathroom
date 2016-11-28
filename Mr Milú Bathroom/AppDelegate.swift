@@ -17,6 +17,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     
     var occupied: Bool?
     
+    let URL = "http://192.168.1.123:5001/api/bathroom_updates/1"
     // In case we want some API security
     let ROOT_KEY = "79edc86c9b2930aecdfcf395ffb695a0"
     
@@ -77,13 +78,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
                 
                 let json = jsonObject as! NSDictionary
                 
-                let occupiedJSON = json["name"] as! String
-                
-                var occupied = false
-                
-                if occupiedJSON == "true" {
-                    occupied = true
-                }
+                let occupied = json["occupied"] as! Bool
                 
                 DispatchQueue.main.async(execute: {
                     self.setOccupied(occupied: occupied)
@@ -99,10 +94,9 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     // GET from url
     func fetchOccupied (completionHandler: @escaping (_ data: Data?, _  response: URLResponse?, _ error: Error?) -> ()) {
         
-        let URL = "https://point-app-rest-api.herokuapp.com/api/place/57c59c8c9b79fa0300e73ca3"
         let request = NSMutableURLRequest(url: Foundation.URL(string: URL)!)
         
-        request.addValue(ROOT_KEY, forHTTPHeaderField: "rootAuth")
+        //request.addValue(ROOT_KEY, forHTTPHeaderField: "rootAuth")
         
         URLSession.shared.dataTask(with: request as URLRequest, completionHandler: { (data,response,error) in
             completionHandler(data, response, error)
