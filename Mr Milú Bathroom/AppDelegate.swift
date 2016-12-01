@@ -15,11 +15,16 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     
     var statusBarItem: NSStatusItem?
     
+    var currentBath: Int = 0
+    
+    var currentTimeItem: NSMenuItem?
+    var recordTimeItem: NSMenuItem?
+    
     var receiveNoti: Bool = true
     
     var occupied: Bool = false
     
-    let URL = "http://192.168.1.123:5001/api/bathroom_updates/1"
+    let URL = "http://bathroom.mrmilu.com/api/bathroom_updates/1"
     // In case we want some API security
     let ROOT_KEY = "79edc86c9b2930aecdfcf395ffb695a0"
     
@@ -48,14 +53,56 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         } else {
             notifItem.state = NSOffState
         }
-        
         menu.addItem(notifItem)
         menu.addItem(NSMenuItem.separator())
+        
+        currentTimeItem = NSMenuItem.init(title: "Current Time: ", action: nil, keyEquivalent: "")
+        recordTimeItem = NSMenuItem.init(title: "Record Time: ", action: nil, keyEquivalent: "")
+        
+        currentTimeItem?.isEnabled = false
+        recordTimeItem?.isEnabled = false
+        
+        menu.addItem(currentTimeItem!)
+        menu.addItem(recordTimeItem!)
+        
+        menu.addItem(NSMenuItem.separator())
+        
         menu.addItem(NSMenuItem(title: "Quit Bathroom", action: #selector(quit), keyEquivalent: "q"))
         self.statusBarItem?.menu = menu
         
         // Begin loop
         self.isOccupied()
+    }
+    
+    func currentBathTime () {
+        if (self.occupied) {
+            while (true) {
+                delay(1, closure: {
+                    self.currentBath = self.currentBath + 1
+                })
+            }
+        }
+        
+        UserDefaults.standard.set(currentBath, forKey: "recordTime")
+    }
+    
+    func updateTitleMenu () {
+        
+    }
+    
+    func recordBathTime (sender: NSMenuItem) {
+        receiveNoti = !receiveNoti
+        if (receiveNoti) {
+            sender.state = NSOnState
+        } else {
+            sender.state = NSOffState
+        }
+        
+        UserDefaults.standard.set(receiveNoti ? 2 : 1, forKey: "receiveNoti")
+    }
+    
+    func secondsToHoursMinutesSeconds (seconds : Int) -> (Int, Int, Int) {
+        return (seconds / 3600, (seconds % 3600) / 60, (seconds % 3600) % 60)
     }
     
     func checkNotifications (sender: NSMenuItem) {
