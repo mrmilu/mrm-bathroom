@@ -19,7 +19,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     
     var occupied: Bool = false
     
-    let URL = "http://192.168.1.123:5001/api/bathroom_updates/1"
+    let URL = "http://bathroom.mrmilu.com/api/bathroom_updates/1"
     // In case we want some API security
     let ROOT_KEY = "79edc86c9b2930aecdfcf395ffb695a0"
     
@@ -37,7 +37,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         
         let menu = NSMenu()
         
-        let notifItem = NSMenuItem(title: "Receive notifications", action: #selector(checkNotifications), keyEquivalent: "n")
+        let notifItem = NSMenuItem(title: NSLocalizedString("Receive notifications", comment: ""), action: #selector(checkNotifications), keyEquivalent: "n")
         
         let receiveInt = UserDefaults.standard.integer(forKey: "receiveNoti")
         
@@ -51,7 +51,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         
         menu.addItem(notifItem)
         menu.addItem(NSMenuItem.separator())
-        menu.addItem(NSMenuItem(title: "Quit Bathroom", action: #selector(quit), keyEquivalent: "q"))
+        menu.addItem(NSMenuItem(title: NSLocalizedString("Quit Mr. Milú Bathroom", comment: ""), action: #selector(quit), keyEquivalent: "q"))
         self.statusBarItem?.menu = menu
         
         // Begin loop
@@ -131,11 +131,11 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     
     func showNotification (_ occupied: Bool) {
         let notification = NSUserNotification()
-        notification.title = "Mr. Milú Bathroom"
+        notification.title = NSLocalizedString("Mr. Milú Bathroom", comment: "")
         if (occupied) {
-            notification.informativeText = "The bathroom is occupied."
+            notification.informativeText = NSLocalizedString("The bathroom is occupied.", comment: "")
         } else {
-            notification.informativeText = "The bathroom is free again."
+            notification.informativeText = NSLocalizedString("The bathroom is free again.", comment: "")
         }
         //notification.soundName = NSUserNotificationDefaultSoundName
         
