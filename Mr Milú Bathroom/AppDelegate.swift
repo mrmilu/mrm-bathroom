@@ -37,21 +37,21 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         }
         
         // Status Bar Item menu
-        statusBarItem = NSStatusBar.system().statusItem(withLength: NSSquareStatusItemLength)
+        statusBarItem = NSStatusBar.system.statusItem(withLength: NSStatusItem.squareLength)
         self.statusBarItem?.image = #imageLiteral(resourceName: "empty")
         
         let menu = NSMenu()
         
-        let notifItem = NSMenuItem(title: "Receive notifications", action: #selector(checkNotifications), keyEquivalent: "n")
+        let notifItem = NSMenuItem(title: NSLocalizedString("Receive notifications", comment: ""), action: #selector(checkNotifications), keyEquivalent: "n")
         
         let receiveInt = UserDefaults.standard.integer(forKey: "receiveNoti")
         
         receiveNoti = (receiveInt == 0 || receiveInt == 2)
         
         if (receiveNoti) {
-            notifItem.state = NSOnState
+            notifItem.state = .on
         } else {
-            notifItem.state = NSOffState
+            notifItem.state = .off
         }
         menu.addItem(notifItem)
         menu.addItem(NSMenuItem.separator())
@@ -67,7 +67,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         
         menu.addItem(NSMenuItem.separator())
         
-        menu.addItem(NSMenuItem(title: "Quit Bathroom", action: #selector(quit), keyEquivalent: "q"))
+        menu.addItem(NSMenuItem(title: NSLocalizedString("Quit Mr. Milú Bathroom", comment: ""), action: #selector(quit), keyEquivalent: "q"))
         self.statusBarItem?.menu = menu
         
         // Begin loop
@@ -93,9 +93,9 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     func recordBathTime (sender: NSMenuItem) {
         receiveNoti = !receiveNoti
         if (receiveNoti) {
-            sender.state = NSOnState
+            sender.state = .on
         } else {
-            sender.state = NSOffState
+            sender.state = .off
         }
         
         UserDefaults.standard.set(receiveNoti ? 2 : 1, forKey: "receiveNoti")
@@ -105,19 +105,19 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         return (seconds / 3600, (seconds % 3600) / 60, (seconds % 3600) % 60)
     }
     
-    func checkNotifications (sender: NSMenuItem) {
+    @objc func checkNotifications (sender: NSMenuItem) {
         receiveNoti = !receiveNoti
         if (receiveNoti) {
-            sender.state = NSOnState
+            sender.state = .on
         } else {
-            sender.state = NSOffState
+            sender.state = .off
         }
         
         UserDefaults.standard.set(receiveNoti ? 2 : 1, forKey: "receiveNoti")
     }
     
     // Quit app func
-    func quit() {
+    @objc func quit() {
         NSApp.terminate(self)
     }
     
@@ -178,11 +178,11 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     
     func showNotification (_ occupied: Bool) {
         let notification = NSUserNotification()
-        notification.title = "Mr. Milú Bathroom"
+        notification.title = NSLocalizedString("Mr. Milú Bathroom", comment: "")
         if (occupied) {
-            notification.informativeText = "The bathroom is occupied."
+            notification.informativeText = NSLocalizedString("The bathroom is occupied.", comment: "")
         } else {
-            notification.informativeText = "The bathroom is free again."
+            notification.informativeText = NSLocalizedString("The bathroom is free again.", comment: "")
         }
         //notification.soundName = NSUserNotificationDefaultSoundName
         

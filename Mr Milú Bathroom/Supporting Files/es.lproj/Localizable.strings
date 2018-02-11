@@ -1,0 +1,13 @@
+/* 
+  Localizable.strings
+  Mr Milú Bathroom
+
+  Created by Daniel on 9/2/17.
+  Copyright © 2017 Daniel Seijo Sánchez. All rights reserved.
+*/
+
+"Mr. Milú Bathroom" = "Baño de Mr. Milú";
+"The bathroom is occupied." = "El baño está ocupado.";
+"The bathroom is free again." = "El baño está libre de nuevo.";
+"Quit Mr. Milú Bathroom" = "Salir de Baño de Mr. Milú";
+"Receive notifications" = "Recibir notificaciones";
