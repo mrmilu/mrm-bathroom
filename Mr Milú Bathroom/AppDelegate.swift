@@ -56,8 +56,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         menu.addItem(notifItem)
         menu.addItem(NSMenuItem.separator())
         
-        currentTimeItem = NSMenuItem.init(title: "Current Time: ", action: nil, keyEquivalent: "")
-        recordTimeItem = NSMenuItem.init(title: "Record Time: ", action: nil, keyEquivalent: "")
+        currentTimeItem = NSMenuItem(title: NSLocalizedString("Current time: ", comment: ""), action: nil, keyEquivalent: "")
+        recordTimeItem = NSMenuItem(title: NSLocalizedString("Record time: ", comment: ""), action: nil, keyEquivalent: "")
         
         currentTimeItem?.isEnabled = false
         recordTimeItem?.isEnabled = false
